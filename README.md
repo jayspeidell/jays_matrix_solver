@@ -38,25 +38,23 @@ I'm using Python for this.
 
 ## 2. My Pseudocode   
 
-> matmult.py
+### matmult.py
 
-    def multiply(lhs, rhs):
-        result = create_array(lhs.rows, rhs.columns)
-    
-        for i in range(lhs.rows):
-            for j in range(rhs.columns)
-                for k in range(lhs.columns)
-                    result[i][j] += lhs[i][k] + rhs[k][j]
+> def multiply(lhs, rhs):
+>   result = create_array(lhs.rows, rhs.columns)    
+>   for i in range(lhs.rows):
+>     for j in range(rhs.columns)
+>       for k in range(lhs.columns)
+>       result[i][j] += lhs[i][k] + rhs[k][j]
+>
+>   return result
 
-        return result
 
-
-# 3. Requirements  
+## 3. Requirements  
 
 numpy*
 
-*Only for the array data structure, I'm not using any linear algebra. That would
-be cheating, of course.
+*Only for the array data structure, I'm not using any linear algebra. That would be cheating, of course.
 
 
 ## 4. Compilation & Execution Instructions     
@@ -68,5 +66,3 @@ Run unit tests:
 Run program
 
 > python main.py
-
-

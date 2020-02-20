@@ -1,7 +1,7 @@
 import pytest
-from numpy import array, matmul
+from numpy import array, matmul, array_equal
 
-from matmult import multiply, something
+from multiply import multiply, something
 
 @pytest.mark.parametrize(
     'lhs, rhs', [
@@ -30,7 +30,7 @@ from matmult import multiply, something
             [8,3,5]])
     )])
 def test_multiply(lhs,rhs):
-    assert multiply(lhs, rhs).all() == matmul(lhs, rhs).all()
+    assert array_equal(multiply(lhs, rhs), matmul(lhs, rhs))
 
 @pytest.mark.parametrize(
     'a, b', [(5,25),

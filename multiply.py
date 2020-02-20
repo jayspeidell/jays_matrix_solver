@@ -1,5 +1,5 @@
 """
-A matrix multiplication module. 
+A matrix multiplication module.
 
 Depends on:
 
@@ -27,7 +27,7 @@ def multiply(lhs, rhs):
     for i in range(lhs.shape[0]):
         for j in range(rhs.shape[1]):
             for k in range(lhs.shape[1]):
-                result[i][j] += lhs[i][k] + rhs[k][j]
+                result[i][j] += lhs[i][k] * rhs[k][j]
 
     return result
 
