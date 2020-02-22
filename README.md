@@ -81,6 +81,7 @@ I'm using Python for this.
           arr[row][col] = arr[row][col] - factor * arr[target_row][col]
       return arr
 
+    def backsolve(arr):
 
 
 ## 3. Requirements  
