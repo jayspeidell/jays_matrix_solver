@@ -5,6 +5,32 @@ from numpy import array, matmul, array_equal, concatenate
 from rref import rref, swap_rows, row_scale, eliminate, backsolve
 
 @pytest.mark.parametrize(
+    'lhs, rhs', [
+    (
+        array([
+                [3,3,5,5],
+                [3,5,9,9],
+                [5,9,17,17]
+            ]),
+        array([
+                [1,0,0,0],
+                [0,1,0,0],
+                [0,0,1,1]
+        ])
+
+    ),
+
+    ])
+def test_rref(lhs, rhs):
+    print("Input:")
+    print(lhs)
+    print("Truth:")
+    print(rhs)
+    print("Result:")
+    print(rref(lhs))
+    assert array_equal(rref(lhs), rhs)
+
+@pytest.mark.parametrize(
     'lhs, rhs, r1, r2', [
     (
         array([
@@ -108,16 +134,14 @@ def test_eliminate(lhs, rhs, row):
     'lhs, rhs', [
     (
         array([
-            [5,5,5,5],
-            [2,2,2,2],
-            [0,0,1,1],
-            [4,4,4,4]
+            [1,5,5,5],
+            [0,1,2,2],
+            [0,0,1,4]
         ]),
         array([
-            [5,5,5,5],
-            [2,2,2,2],
-            [0,0,1,1],
-            [4,4,0,0]
+            [1,0,0,15],
+            [0,1,0,-6],
+            [0,0,1,4]
         ])
     )
 ])
@@ -129,32 +153,3 @@ def test_backsolve(lhs, rhs):
     print("Result:")
     print(backsolve(lhs))
     assert array_equal(backsolve(lhs), rhs)
-
-
-'''
-@pytest.mark.parametrize(
-    'lhs, rhs', [
-    (
-        array([
-                [3,3,5,5],
-                [3,5,9,9],
-                [5,9,17,17]
-            ]),
-        array([
-                [1,0,0,0],
-                [0,1,0,0],
-                [0,0,1,1]
-        ])
-
-    ),
-
-    ])
-def test_rref(lhs, rhs):
-    print("Input:")
-    print(lhs)
-    print("Truth:")
-    print(rhs)
-    print("Result:")
-    print(rref(lhs))
-    assert array_equal(rref(lhs), rhs)
-'''

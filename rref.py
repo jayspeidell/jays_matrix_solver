@@ -12,6 +12,7 @@ __all__ = ['rref']
 import numpy as np
 
 def rref(arr):
+
     """
     A driver function to solve a linear system of equations
     to their reduced row echelon form.
@@ -25,9 +26,14 @@ def rref(arr):
     for col in range(arr.shape[1] - 1):
         for row in range(arr.shape[0]):
             idx = list(arr[:,col]).index(max(arr[:,col]))
-            arr = swap_rows(arr, row, idx)
+            if (idx > col):
+                arr = swap_rows(arr, row, idx)
             arr = row_scale(arr, row)
             arr = eliminate(arr, row)
+            print("================")
+            print(row,col)
+            print(arr)
+    #print(arr)
     arr = backsolve(arr)
     return arr
 
@@ -98,10 +104,23 @@ def backsolve(arr):
     Returns:
     arr (numpy.array): the input array in rref
     """
+
+    last_row = arr.shape[0] - 1
+    last_col = arr.shape[1] - 1
+
+    for target_row in range(last_row,-1,-1):
+        for elim_row in range(target_row-1,-1,-1):
+            if (target_row == elim_row):
+                pass
+            factor = arr[elim_row][target_row]
+            for col in range(target_row, last_col+1):
+                arr[elim_row][col] -= float(factor * arr[target_row][col])
+
+    '''
     augColIdx = arr.shape[1] - 1
-    for row in range(0,arr.shape[0])[::-1]:
-        for col in range(0,row)[::-1]:
-            factor = arr[row,col]
-            arr[row,col] = arr[row,col] - (factor * arr[row,col])
-            arr[row,col] = arr[row,augColIdx] - (factor * arr[row,augColIdx])
+    for row in range(0,arr.shape[1]-1)[::-1]:
+        print(row)
+        for col in range(row, arr.shape[0]-1):
+            factor =
+    '''
     return arr

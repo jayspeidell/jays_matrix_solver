@@ -38,6 +38,8 @@ I'm using Python for this.
 
 ## 2. My Pseudocode   
 
+SPOILER ALERT: This pseudocode, when implemented, did not all survive
+contact with unit tests. There were casualties, especially in backsolve. 
 
 > multiply.py
 
