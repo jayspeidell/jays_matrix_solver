@@ -7,7 +7,7 @@ import here.
 The main driver function is rref(), other function support it.
 """
 
-__all__ = ['rref']
+__all__ = ['rref', 'swap_rows', 'row_scale', 'eliminate', 'backsolve']
 
 import numpy as np
 
@@ -30,10 +30,6 @@ def rref(arr):
                 arr = swap_rows(arr, row, idx)
             arr = row_scale(arr, row)
             arr = eliminate(arr, row)
-            print("================")
-            print(row,col)
-            print(arr)
-    #print(arr)
     arr = backsolve(arr)
     return arr
 
@@ -116,11 +112,4 @@ def backsolve(arr):
             for col in range(target_row, last_col+1):
                 arr[elim_row][col] -= float(factor * arr[target_row][col])
 
-    '''
-    augColIdx = arr.shape[1] - 1
-    for row in range(0,arr.shape[1]-1)[::-1]:
-        print(row)
-        for col in range(row, arr.shape[0]-1):
-            factor =
-    '''
     return arr

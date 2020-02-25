@@ -7,9 +7,9 @@ numpy.array
 numpy.zeros
 """
 
-__all__ = ['multiply']
-
 from numpy import array, zeros
+
+__all__ = ['multiply']
 
 def multiply(lhs, rhs):
     """
