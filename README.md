@@ -152,3 +152,7 @@ Run unit tests:
 Run program
 
 > python main.py
+
+As per the instructions, the Quadratic example is hard-coded into the main
+function and is used to generate the output. Refer to the documentation for
+customizing output. 

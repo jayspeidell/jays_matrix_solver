@@ -69,7 +69,7 @@ def solve(X, Xt, Y, PrintZero=True, Verbose=False):
         if (int(c) != 0 or PrintZero == True):
             phi_hat += str(c)
             if (x >= 1):
-                phi_hat += "x^" + str(x)
+                phi_hat += " * x^" + str(x)
             if (c != len(solved[:,-1]) - 2):
                 phi_hat += " + "
 

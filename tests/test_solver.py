@@ -24,7 +24,7 @@ from solver import solve
             ]),
         True,
         [0.0,0.0,1.0],
-        "phi_hat = 0.0 + 0.0x^1 + 1.0x^2"
+        "phi_hat = 0.0 + 0.0 * x^1 + 1.0 * x^2"
     ),
     (
         array([
@@ -44,7 +44,7 @@ from solver import solve
             ]),
         False,
         [0.0,0.0,1.0],
-        "phi_hat = 1.0x^2"
+        "phi_hat = 1.0 * x^2"
     )
 ])
 def test_solve(X, Xt, Y, PrintZero, coeffs, solution):
