@@ -101,19 +101,19 @@ contact with unit tests. There were casualties, especially in backsolve.
 > solve.py
 
     def solve(X,Xt,Y):
-    XtX = multiply(Xt,X)
-    XtY = multiply(Xt,Y)
-    system = concatenate(XtX, XtY)
-    solved = rref(system)
+      XtX = multiply(Xt,X)
+      XtY = multiply(Xt,Y)
+      system = concatenate(XtX, XtY)
+      solved = rref(system)
 
-    phi_hat = "phi_hat = "
-    for x, c in enumerate(solve[:,-1]):
-      phi_hat += c
-      if x > 1:
-        phi_hat += "x^" + x
-      if (c != len(solved[:,-1]) - 2):
-                phi_hat += " + "
-      return phi_hat
+      phi_hat = "phi_hat = "
+      for x, c in enumerate(solve[:,-1]):
+        phi_hat += c
+        if x > 1:
+          phi_hat += "x^" + x
+        if (c != len(solved[:,-1]) - 2):
+                  phi_hat += " + "
+        return phi_hat
 
 > main.py
 
