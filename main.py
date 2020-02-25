@@ -1,13 +1,22 @@
 """
 A matrix solving application.
+
+Depends on numpy.
 """
 
-import matmult
+from solve import solve
+
+
+__all__ = ['main']
 
 def main():
     """
     The main function!
     """
+
+    solve() 
+
+
     print("Hello World!")
 
 

@@ -30,6 +30,3 @@ def multiply(lhs, rhs):
                 result[i][j] += lhs[i][k] * rhs[k][j]
 
     return result
-
-def something(a):
-    return a * 5
