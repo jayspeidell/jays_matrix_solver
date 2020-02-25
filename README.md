@@ -60,11 +60,11 @@ contact with unit tests. There were casualties, especially in backsolve.
     def rref(array arr, col):
       for row in range(arr.rows):
         idx = where(arr[all][col] == max(arr[all][col]))
-        arr = swap_rows(arr, row, idx)
+        if (idx > col):
+            arr = swap_rows(arr, row, idx)
         arr = row_scale(arr, row)
         arr = eliminate(arr, row)
       arr = backsolve(arr)
-
 
     def swap_rows(arr, row, idx):
       arr_new = arr.copy()
@@ -155,4 +155,4 @@ Run program
 
 As per the instructions, the Quadratic example is hard-coded into the main
 function and is used to generate the output. Refer to the documentation for
-customizing output. 
+customizing output.
