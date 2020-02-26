@@ -36,13 +36,10 @@
 
 Langauge: Python 3
 
-Documentation is in docs/
+Documentation is in docs/ (numpy style)
 Unit tests are in tests/
 
 ## 2. My Pseudocode   
-
-SPOILER ALERT: This pseudocode, when implemented, did not all survive
-contact with unit tests. There were casualties, especially in backsolve.
 
 > multiply.py
 
@@ -55,6 +52,7 @@ contact with unit tests. There were casualties, especially in backsolve.
 
       return result
 
+
 > rref.py
 
     def rref(array arr, col):
@@ -66,17 +64,20 @@ contact with unit tests. There were casualties, especially in backsolve.
         arr = eliminate(arr, row)
       arr = backsolve(arr)
 
+
     def swap_rows(arr, row, idx):
       arr_new = arr.copy()
       arr_new[row][all] = arr[idx][all]
       arr_new[idx][all] = arr[row][all]
       return arr_new
 
+
     def row_scale(arr, row):
       factor = arr[row][row]
       for col in range(arr.cols):
           arr[row][col] = arr[row][col] / factor
       return arr
+
 
     def eliminate(arr, target_row):
       target_col = target_row
@@ -85,6 +86,7 @@ contact with unit tests. There were casualties, especially in backsolve.
           for col in range(target_col, arr.cols):
               arr[row,col] = arr[row,col] - factor * arr[target_row,col]
       return arr
+
 
     def backsolve(arr):
       last_row = arr.rows - 1
@@ -115,6 +117,7 @@ contact with unit tests. There were casualties, especially in backsolve.
                   phi_hat += " + "
         return phi_hat
 
+
 > main.py
 
     def main():
@@ -136,11 +139,12 @@ contact with unit tests. There were casualties, especially in backsolve.
 
       print(solve(X, Xt, Y))
 
+
 ## 3. Requirements  
 
-numpy*
+numpy
 
-*Only for the array data structure, I'm not using any linear algebra. That would be cheating, of course.
+(Only for the array data structure, I'm not using any linear algebra.)
 
 
 ## 4. Compilation & Execution Instructions     

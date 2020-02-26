@@ -17,11 +17,15 @@ def rref(arr):
     A driver function to solve a linear system of equations
     to their reduced row echelon form.
 
-    Parameters:
-    arr (numpy.array): the system of linear equations to be solved
+    Parameters
+    -------
+    arr : numpy.array
+        the system of linear equations to be solved
 
-    Returns:
-    arr (numpy.array): the rref
+    Returns
+    -------
+    arr : numpy.array
+        the rref
     """
     for col in range(arr.shape[1] - 1):
         for row in range(arr.shape[0]):
@@ -37,13 +41,19 @@ def swap_rows(arr, row, idx):
     """
     A function that swaps two rows in a numpy array.
 
-    Parameters:
-    arr (numpy.array): the input array
-    row (int): the index of the row being examined by the top level function
-    idx (int): the intex of the row to be swapped with "row"
+    Parameters
+    -------
+    arr : numpy.array
+        the input array
+    row : int
+        the index of the row being examined by the top level function
+    idx : int
+        the intex of the row to be swapped with "row"
 
-    Returns:
-    arr_new (numpy.array): a copy of the input array with the rows swapped
+    Returns
+    -------
+    arr_new : numpy.array
+        a copy of the input array with the rows swapped
     """
     arr_new = arr.copy()
     arr_new[row,:] = arr[idx,:]
@@ -56,12 +66,17 @@ def row_scale(arr, row):
     examined. It results in the original [row][row] value scaled to one
     and the rest of the row scaled accordingly.
 
-    Parameters:
-    arr (numpy.array): The input array
-    row (int): the index of both row and column being examined
+    Parameters
+    -------
+    arr : numpy.array
+        the input array
+    row : int
+        the index of both row and column being examined
 
-    Returns:
-    arr (numpy.array): the array with one row scaled
+    Returns
+    -------
+    arr : numpy.array
+        the array with one row scaled
     """
     factor = arr[row,row]
     if (factor != 0):
@@ -75,12 +90,17 @@ def eliminate(arr, target_row):
     the target row, to zero. The rest of the row is modified accordingly
     as the whole rows are subtracted from each other.
 
-    Parameters:
-    arr (numpy.array): the input array
-    row (int): the index of both the row and column being examined
+    Parameters
+    -------
+    arr : numpy.array
+        the input array
+    row : int
+        the index of both the row and column being examined
 
-    Returns:
-    arr (numpy.array): the array with appropriate values eliminated
+    Returns
+    -------
+    arr : numpy.array
+        the array with appropriate values eliminated
     """
     target_col = target_row
     for row in range(target_row + 1, arr.shape[0]):
@@ -94,11 +114,15 @@ def backsolve(arr):
     A function to rake the row echelon form of a matrix and reduce it to the
     reduced row echelon form.
 
-    Parameters:
-    arr (numpy.array): an array in ref
+    Parameters
+    -------
+    arr : numpy.array
+        an array in ref
 
-    Returns:
-    arr (numpy.array): the input array in rref
+    Returns
+    -------
+    arr : numpy.array
+        the input array in rref
     """
 
     last_row = arr.shape[0] - 1

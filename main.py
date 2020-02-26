@@ -1,18 +1,30 @@
 """
-A program that solves systems of linear equations. 
+A program that solves systems of linear equations.
 
-Depends on numpy.
+by Jay Speidell for CS 417
+
+See README.md for details.
 """
 
+from numpy import array
 from solver import solve
 
-from numpy import array
-
-__all__ = ['main']
+__all__ = ['main'] # suppresses pydoc from documenting imported assets 
 
 def main():
     """
-    The main function!
+    main()
+
+    Provides the sample arrays X, Xt, and Y provided in the Quadratic example,
+    passes them to solve(), and prints the return.
+
+    Parameters
+    -------
+    none
+
+    Returns
+    -------
+    none
     """
     X = array([
                 [1,0,0],

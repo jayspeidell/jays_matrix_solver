@@ -15,12 +15,17 @@ def multiply(lhs, rhs):
     """
     Multiply two matrices and return the result.
 
-    Parameters:
-    lhs (numpy.array): Left hand matrix
-    rhs (numpy.array): Right hand matrix
+    Parameters
+    -------
+    lhs : numpy.array
+        left hand matrix
+    rhs : numpy.array
+        Right hand matrix
 
-    Returns:
-    result (numpy.array): The resulting matrix
+    Returns
+    -------
+    result : numpy.array
+        The resulting matrix
     """
     result = zeros((lhs.shape[0], rhs.shape[1]))
 

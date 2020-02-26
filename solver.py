@@ -16,17 +16,22 @@ def solve(X, Xt, Y, PrintZero=True, Verbose=False):
     the option of printing all intermediate steps, and that is why it is so
     big.
 
-    Parameters:
-    X (numpy.array) : X
-    Xt (numpy.array) : the transpose of X
-    Y (numpy.array) : Y
-    PrintZero (boolean) : Whether or not to print zero coefficients, in string
-                            return, default is True
-    Verbose (boolean) : whether or not to print all steps, default is False
+    Parameters
+    -------
+    X : numpy.array X
+    Xt : numpy.array the transpose of X
+    Y : numpy.array Y
+    PrintZero : boolean
+        Whether or not to print zero coefficients, in string return, default is True
+    Verbose : boolean
+        whether or not to print all steps, default is False
 
-    Returns:
-    - _ (list) : List of coefficients
-    - phi_hat (str) : The solution equation as a string.
+    Returns
+    -------
+    - _ : list
+        list of coefficients
+    - phi_hat : string
+        the solution equation as a string.
     """
 
     XtX = multiply(Xt,X)
