@@ -1,30 +1,26 @@
 """
 A program that solves systems of linear equations.
 
-by Jay Speidell for CS 417
+by Jay Speidell for CS 417.
 
-See README.md for details.
+For more details, see README.md
+
+To run the program, use the command:
+> python main.py
+
 """
 
-from numpy import array
 from solver import solve
+from numpy import array
 
-__all__ = ['main'] # suppresses pydoc from documenting imported assets 
+__all__ = ['main']
 
 def main():
     """
     main()
 
-    Provides the sample arrays X, Xt, and Y provided in the Quadratic example,
-    passes them to solve(), and prints the return.
-
-    Parameters
-    -------
-    none
-
-    Returns
-    -------
-    none
+    Includes hard-coded X, Xt, and Y arrays from the Quadratic example in the
+    course material. Passes these to solve() and prints the return.
     """
     X = array([
                 [1,0,0],

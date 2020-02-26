@@ -37,6 +37,7 @@
 Langauge: Python 3
 
 Documentation is in docs/ (numpy style)
+
 Unit tests are in tests/
 
 ## 2. My Pseudocode   
@@ -160,3 +161,8 @@ Run program
 As per the instructions, the Quadratic example is hard-coded into the main
 function and is used to generate the output. Refer to the documentation for
 customizing output.
+
+By default it prints zeros in the output function. I wasn't sure if that
+should be supressed, so I left it optional. If you add the keyword argument
+"PrintZero=False" to solve() on line 45 in main.py it will print without
+the zeros.

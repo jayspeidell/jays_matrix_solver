@@ -1,6 +1,7 @@
 """
-Contains a driver function to demonstrate the functions developed for this
-assignment.
+Contains a driver function to demonstrate that prepares the input for solving
+a system of linear equations, uses the rref() function in rref.py to solve it,
+then returns the results. 
 """
 
 from numpy import array, concatenate
